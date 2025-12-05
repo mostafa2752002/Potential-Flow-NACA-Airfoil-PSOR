@@ -50,7 +50,7 @@ Where $\omega$ is the relaxation factor.
 
 ### 1. Grid Generation
 An H-grid topology was generated to discretize the domain, ensuring fine resolution near the airfoil surface and leading/trailing edges.
-![Computational Grid](results/grid_generation.png)
+![Computational Grid](Results/Computational Grid.png)
 **
 
 ### 2. Streamlines & Velocity
