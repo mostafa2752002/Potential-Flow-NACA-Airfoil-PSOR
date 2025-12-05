@@ -1,13 +1,13 @@
 # Potential Flow Analysis over NACA 23021 Airfoil using PSOR
 
 **Author:** Mustafa Taha  
-[cite_start]**Course:** AER 4110 - Computational Aerodynamics, Cairo University  
-[cite_start]**Date:** November 2025
+**Course:** AER 4110 - Computational Aerodynamics, Cairo University  
+**Date:** November 2025
 
 ## 📝 Abstract
-[cite_start]This project implements a Computational Fluid Dynamics (CFD) solution for steady, incompressible, inviscid flow over a **NACA 23021** airfoil at an Angle of Attack (AoA) of **7°**[cite: 9].
+This project implements a Computational Fluid Dynamics (CFD) solution for steady, incompressible, inviscid flow over a **NACA 23021** airfoil at an Angle of Attack (AoA) of **7°**.
 
-[cite_start]The solution solves the Laplace equation for the Stream Function ($\Psi$) using the **Finite Difference Method (FDM)** on a body-fitted H-grid topology[cite: 10, 33]. [cite_start]The linear system is solved iteratively using the **Point Successive Over-Relaxation (PSOR)** method[cite: 44].
+The solution solves the Laplace equation for the Stream Function ($\Psi$) using the **Finite Difference Method (FDM)** on a body-fitted H-grid topology. The linear system is solved iteratively using the **Point Successive Over-Relaxation (PSOR)** method.
 
 ## ⚙️ Key Features
 * **Grid Generation:** Custom algebraic H-Grid generation algorithm adaptable for NACA 4 and 5-digit series.
@@ -23,15 +23,15 @@
 ### Governing Equation
 The flow is governed by the Laplace equation for the Stream Function ($\Psi$):
 $$\Psi_{xx} + \Psi_{yy} = 0$$
-[cite_start][cite: 34]
+
 
 ### Coordinate Transformation
-[cite_start]To handle the curved airfoil geometry, the physical domain $(x, y)$ is transformed into a computational rectangular domain $(\xi, \eta)$[cite: 36]. [cite_start]The governing equation is discretized using Central Difference approximations[cite: 37].
+To handle the curved airfoil geometry, the physical domain $(x, y)$ is transformed into a computational rectangular domain $(\xi, \eta)$.The governing equation is discretized using Central Difference approximations.
 
 ### Numerical Method (PSOR)
 The discretized equation is solved using the Point Successive Over-Relaxation method. The iterative update formula is:
 $$\Psi_{i,j}^{n+1} = (1-\omega)\Psi_{i,j}^{n} + \frac{\omega}{2(1+\beta^2)} [\Psi_{i+1,j}^{n} + \Psi_{i-1,j}^{n+1} + \beta(\Psi_{i,j+1}^{n} + \Psi_{i,j-1}^{n+1})]$$
-[cite_start]Where $\omega$ is the relaxation factor[cite: 45, 47].
+Where $\omega$ is the relaxation factor.
 
 ## 💻 Usage
 
@@ -49,7 +49,7 @@ $$\Psi_{i,j}^{n+1} = (1-\omega)\Psi_{i,j}^{n} + \frac{\omega}{2(1+\beta^2)} [\Ps
 ## 📊 Results
 
 ### 1. Grid Generation
-[cite_start]An H-grid topology was generated to discretize the domain, ensuring fine resolution near the airfoil surface and leading/trailing edges[cite: 10, 52].
+An H-grid topology was generated to discretize the domain, ensuring fine resolution near the airfoil surface and leading/trailing edges.
 ![Computational Grid](results/grid_generation.png)
 **
 
@@ -59,7 +59,7 @@ The streamlines illustrate the flow physically turning around the airfoil at $\a
 **
 
 ### 3. Aerodynamic Coefficients
-[cite_start]The Lift ($C_l$), Drag ($C_d$), and Pitching Moment ($C_m$) coefficients were calculated by integrating the Pressure Coefficient over the surface[cite: 279].
+The Lift ($C_l$), Drag ($C_d$), and Pitching Moment ($C_m$) coefficients were calculated by integrating the Pressure Coefficient over the surface.
 
 | Parameter | Current Code (PSOR) | XFLR5 (Validation) |
 | :--- | :--- | :--- |
@@ -67,18 +67,18 @@ The streamlines illustrate the flow physically turning around the airfoil at $\a
 | **Drag ($C_d$)** | 0.1559* | 0.0060 |
 | **Moment ($C_{m_{0.25c}}$)** | -0.0469 | -0.0162 |
 
-[cite_start]*[cite: 374]*
 
-> **Note on Drag:** The discrepancy in $C_d$ is expected. The potential flow assumption neglects viscosity ($Re \to \infty$). In theoretical potential flow, $C_d$ should be zero (d'Alembert's paradox). [cite_start]The calculated value represents numerical error/induced drag from the grid, whereas XFLR5 includes viscous corrections[cite: 378].
+
+> **Note on Drag:** The discrepancy in $C_d$ is expected. The potential flow assumption neglects viscosity ($Re \to \infty$). In theoretical potential flow, $C_d$ should be zero (d'Alembert's paradox). The calculated value represents numerical error/induced drag from the grid, whereas XFLR5 includes viscous corrections.
 
 ## 📉 Convergence
-[cite_start]The solution was iterated until the maximum Root Mean Square (RMS) error fell below the tolerance of $10^{-4}$[cite: 71].
+The solution was iterated until the maximum Root Mean Square (RMS) error fell below the tolerance of $10^{-4}$.
 
 ![Convergence History](results/convergence_plot.png)
 
 ## 📚 References
 1.  Anderson, J. D., *Computational Fluid Dynamics: The Basics with Applications*.
-2.  Cairo University, Faculty of Engineering, *AER 4110 Project Problem Statement*, Nov 2024.
+2.  Cairo University, Faculty of Engineering, *AER 4110 Project Problem Statement*, Nov 2025.
 3.  Mustafa Taha, *Solution of Flow Over NACA 23021 Airfoil Using PSOR*, Project Report, 2025.
 
 ---
