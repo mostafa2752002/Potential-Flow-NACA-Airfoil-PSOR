@@ -50,12 +50,11 @@ Where $\omega$ is the relaxation factor.
 
 ### 1. Grid Generation
 An H-grid topology was generated to discretize the domain, ensuring fine resolution near the airfoil surface and leading/trailing edges.
-![Computational Grid](Results/Computational Grid.png)
+
 **
 
 ### 2. Streamlines & Velocity
 The streamlines illustrate the flow physically turning around the airfoil at $\alpha=7^{\circ}$.
-![Streamlines](results/streamlines.png)
 **
 
 ### 3. Aerodynamic Coefficients
@@ -74,7 +73,6 @@ The Lift ($C_l$), Drag ($C_d$), and Pitching Moment ($C_m$) coefficients were ca
 ## 📉 Convergence
 The solution was iterated until the maximum Root Mean Square (RMS) error fell below the tolerance of $10^{-4}$.
 
-![Convergence History](results/convergence_plot.png)
 
 ## 📚 References
 1.  Anderson, J. D., *Computational Fluid Dynamics: The Basics with Applications*.
