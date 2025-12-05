@@ -1,8 +1,8 @@
 # Potential Flow Analysis over NACA 23021 Airfoil using PSOR
 
 **Author:** Mustafa Taha  
-[cite_start]**Course:** AER 4110 - Computational Aerodynamics, Cairo University [cite: 1765, 1762]  
-[cite_start]**Date:** November 2024 [cite: 1761]
+[cite_start]**Course:** AER 4110 - Computational Aerodynamics, Cairo University  
+[cite_start]**Date:** November 2025
 
 ## 📝 Abstract
 [cite_start]This project implements a Computational Fluid Dynamics (CFD) solution for steady, incompressible, inviscid flow over a **NACA 23021** airfoil at an Angle of Attack (AoA) of **7°**[cite: 9].
